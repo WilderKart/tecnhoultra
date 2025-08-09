@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - TechNhoulta</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="https://kit.fontawesome.com/b408879b64.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="box">
+        <!-- Sección Izquierda: Ilustración -->
+        <div class="left">
+    <video class="login-video" autoplay loop muted playsinline>
+        <source src="./video/video_login.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+</div>
+
+        <!-- Sección Derecha: Formulario -->
+        <form id="login-form">
+            <h2>Login | <span class="logo">TechNhoulta</span></h2>
+            <label>¿No tienes una cuenta? 
+                <a href="mailto:ghocho88@gmail.com?subject=Solicitud de Acceso al Panel de Administración&body=Hola,%0A%0AQuisiera solicitar acceso al panel de administración.%0A%0AMi nombre es: [Tu Nombre]%0AMi correo es: [Tu Correo]%0A%0ARazón de la solicitud:%0A[Describe brevemente por qué necesitas acceso]%0A%0AGracias." target="_blank">
+                    Solicita acceso
+                </a>
+            </label>
+
+            <div class="input-box">
+                <input type="email" id="login-user" required>
+                <label>Correo electrónico</label>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+
+            <div class="input-box">
+                <input type="password" id="login-pass" required>
+                <label>Contraseña</label>
+                <i class="fa-solid fa-lock"></i>
+            </div>
+
+            <div class="items">
+                <div class="left">
+                    <input type="checkbox" id="remember">
+                    <span>Recuérdame</span>
+                </div>
+                <div class="right">
+                    <a href="#" onclick="resetPassword()">Olvidé mi contraseña</a>
+                </div>
+            </div>
+
+            <div class="btn">
+                <button type="submit">Iniciar sesión</button>
+            </div>
+
+            <div class="other-links">
+                <p>O puedes ingresar con:</p>
+                <div class="social">
+                    <a href="#"><i class="fa-brands fa-google"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+
+            <p class="error" id="login-error"></p>
+        </form>
+    </div>
+
+    <script src="./js/login.js" defer></script>
+</body>
+</html>

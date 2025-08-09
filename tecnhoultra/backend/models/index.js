@@ -23,6 +23,7 @@ db.objetivos = require('./objetivo.modelo')(sequelize, DataTypes);
 db.servicios = require('./servicio.modelo')(sequelize, DataTypes);
 db.funcionalidades = require('./funcionalidad.modelo')(sequelize, DataTypes);
 db.propuesta = require('./propuesta.modelo')(sequelize, DataTypes);
+db.usuarios = require("./user.model.js")(sequelize, Sequelize);
 
 // Relaciones
 db.clientes.hasMany(db.proyectos, { foreignKey: 'cliente_id', onDelete: 'CASCADE' });

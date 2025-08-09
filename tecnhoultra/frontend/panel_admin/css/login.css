@@ -1,0 +1,350 @@
+/* Importar fuente */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Cuerpo de la página */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    background: #5c6bc0;
+    background: linear-gradient(135deg, #5c6bc0, #3949ab);
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.box {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    padding: 40px 20px;
+    width: 90%;
+    max-width: 900px;
+    min-height: 500px;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    animation: show 1s ease;
+}
+
+
+/* Sección Izquierda: Video */
+.left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.login-video {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 16px;
+
+    transition: transform 0.3s ease;
+}
+
+.login-video:hover {
+    transform: scale(1.02);
+}
+
+/* Asegura que el video no se deforme */
+.login-video object {
+    width: 100%;
+    height: auto;
+}
+
+/* Campos de entrada */
+.input-box {
+    position: relative;
+    margin-top: 20px;
+}
+
+.input-box > input {
+    width: 100%;
+    max-width: 320px;
+    height: 45px;
+    margin: 0 auto;
+    border: 2px solid #616161;
+    border-radius: 20px;
+    outline: none;
+    font-size: 1rem;
+    padding-left: 20px;
+    transition: 0.2s;
+    display: block;
+}
+
+.input-box > input:focus,
+.input-box > input:valid {
+    border: 2px solid #5c6bc0;
+}
+
+.input-box > label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 55px;
+    pointer-events: none;
+    font-size: 14px;
+    transition: 0.2s;
+    color: #616161;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+    color: #5c6bc0;
+    font-size: 12px;
+    top: 0;
+    background: #fff;
+    padding: 0 3px;
+}
+
+.input-box > i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 55px;
+    color: #616161;
+    transition: 0.2s;
+}
+
+input:focus ~ i,
+input:valid ~ i {
+    color: #5c6bc0;
+}
+
+/* Recuérdame y olvidé contraseña */
+.items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0;
+    font-size: 12px;
+    padding-inline: 20px;
+}
+
+.items .left {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.items a {
+    color: #5c6bc0;
+    text-decoration: none;
+}
+
+.items a:hover {
+    text-decoration: underline;
+}
+
+/* Botón */
+.btn button {
+    width: 100%;
+    max-width: 320px;
+    margin: 20px auto;
+    background: #5c6bc0;
+    padding: 12px 30px;
+    border: 1px solid transparent;
+    color: #fff;
+    border-radius: 100vmax;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.btn button:hover {
+    background: transparent;
+    border: 1px solid #5c6bc0;
+    color: #5c6bc0;
+}
+
+/* Redes sociales */
+.other-links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.other-links p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.social > a {
+    width: 45px;
+    height: 45px;
+    background: #5c6bc0;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.2s;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social > a:hover {
+    transform: scale(1.15);
+}
+
+.social > a > .fa-brands {
+    font-size: 20px;
+    color: #fff;
+}
+
+/* Colores de redes sociales */
+.social > a:first-child  { background: #e74133; } /* Google */
+.social > a:nth-child(2) { background: #3961ba; } /* Facebook */
+.social > a:nth-child(3) { background: #229aef; } /* Twitter */
+.social > a:last-child   { background: #202020; } /* GitHub */
+
+/* Mensaje de error */
+.error {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    min-height: 20px;
+}
+
+/* Animaciones */
+@keyframes show {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slide {
+    from {
+        opacity: 0;
+        transform: translateY(-200%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+
+/* Pantallas medianas */
+@media (max-width: 992px) {
+    .box {
+        flex-direction: column;
+        min-height: auto;
+        padding: 30px 20px;
+    }
+
+    .left, form {
+        width: 100%;
+    }
+
+    .left > img {
+        max-width: 350px;
+    }
+}
+
+/* Pantallas pequeñas */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .box {
+        width: 95%;
+        padding: 25px 15px;
+    }
+
+    form > h2 {
+        font-size: 1.3rem;
+    }
+
+    .input-box > input,
+    .btn button {
+        max-width: 100%;
+    }
+
+    .items {
+        padding-inline: 15px;
+        font-size: 11px;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 576px) {
+    .box {
+        width: 100%;
+        padding: 20px 10px;
+        border-radius: 10px;
+    }
+
+    form > h2 {
+        font-size: 1.2rem;
+    }
+
+    .input-box > input {
+        height: 40px;
+        font-size: 0.95rem;
+    }
+
+    .btn button {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+
+    .social > a {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social > a > .fa-brands {
+        font-size: 18px;
+    }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 400px) {
+    body {
+        padding: 10px;
+    }
+
+    .box {
+        padding: 15px;
+    }
+
+    form > h2 {
+        font-size: 1.1rem;
+    }
+
+    .items {
+        font-size: 10px;
+    }
+
+    .error {
+        font-size: 0.85rem;
+    }
+}
