@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel de Administrador - TechNhoulta</title>
+    <link rel="stylesheet" href="../css/admin.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+</head>
+<body>
+    <!-- Panel Principal -->
+    <div class="dashboard">
+
+        <!-- Header -->
+        <header class="header">
+            <h1>Panel de Administración</h1>
+            <div class="user-menu">
+                <span class="username" id="admin-name">Bienvenido, Admin</span>
+                <button id="logout-button" class="btn-logout">Cerrar Sesión</button>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li onclick="showSection('dashboard')" class="active"><i class="bi bi-speedometer2"></i> Dashboard</li>
+                    <li onclick="showSection('clientes')"><i class="bi bi-people"></i> Clientes</li>
+                    <li onclick="showSection('proyectos')"><i class="bi bi-folder"></i> Proyectos</li>
+                    <li onclick="showSection('analisis')"><i class="bi bi-graph-up"></i> Análisis</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+
+            <!-- Dashboard -->
+            <section id="dashboard" class="section active">
+                <h2>Resumen General</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="icon bg-blue">
+                            <i class="bi bi-person-check"></i>
+                        </div>
+                        <h3>Total de Solicitudes</h3>
+                        <p id="total-solicitudes">0</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="icon bg-green">
+                            <i class="bi bi-currency-dollar"></i>
+                        </div>
+                        <h3>Presupuesto Promedio</h3>
+                        <p id="promedio-presupuesto">$0</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="icon bg-orange">
+                            <i class="bi bi-briefcase"></i>
+                        </div>
+                        <h3>Tipos de Negocio</h3>
+                        <p id="tipos-negocio">5</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="icon bg-purple">
+                            <i class="bi bi-calendar-check"></i>
+                        </div>
+                        <h3>Próximo Proyecto</h3>
+                        <p id="proximo-proyecto">-</p>
+                    </div>
+                </div>
+
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3>Distribución por Tipo de Negocio</h3>
+                        <canvas id="chart-negocios"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Evolución de Solicitudes (Últimos 7 días)</h3>
+                        <canvas id="chart-evolucion"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Clientes -->
+            <section id="clientes" class="section hidden">
+                <h2>Clientes Registrados</h2>
+                <div class="search-container">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="search-clientes" list="clientes-suggestions" placeholder="Buscar por nombre, correo o teléfono...">
+                    <datalist id="clientes-suggestions"></datalist>
+                </div>
+                <div class="table-container">
+                    <table id="clientes-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Empresa</th>
+                                <th>Correo</th>
+                                <th>Teléfono</th>
+                                <th>Web/Redes</th>
+                                <th>Fecha</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="clientes-body"></tbody>
+                    </table>
+                </div>
+revi                <div id="pagination-container" class="pagination-container"></div>
+            </section>
+
+            <!-- Proyectos -->
+            <section id="proyectos" class="section hidden">
+                <h2>Detalles del Proyecto</h2>
+                <div class="table-container">
+                    <table id="proyectos-table">
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Producto</th>
+                                <th>Presupuesto</th>
+                                <th>Fecha Límite</th>
+                                <th>Público Objetivo</th>
+                            </tr>
+                        </thead>
+                        <tbody id="proyectos-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Análisis -->
+            <section id="analisis" class="section hidden">
+                <h2>Análisis Detallado</h2>
+                <div class="analysis-grid">
+                    <div class="analysis-card">
+                        <h3>¿Qué los diferencia de la compatencia?</h3>
+                        <ul id="diferencia-list"></ul>
+                    </div>
+                    <div class="analysis-card">
+                        <h3>Detalles Adicionales del proyecto</h3>
+                        <div id="detalles-list"></div>
+                    </div>
+                </div>
+            </section>
+            
+
+        </main>
+    </div>
+
+    <!-- Modal para Editar Solicitud -->
+    <div id="edit-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <form id="edit-form">
+                <span class="close-modal" id="close-modal-button">&times;</span>
+                <h2>Editar Solicitud</h2>
+                <input type="hidden" id="edit-id">
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="edit-nombre_completo">Nombre Completo</label>
+                        <input type="text" id="edit-nombre_completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-empresa">Empresa</label>
+                        <input type="text" id="edit-empresa">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-correo">Correo</label>
+                        <input type="email" id="edit-correo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-telefono">Teléfono</label>
+                        <input type="tel" id="edit-telefono">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="edit-sitio_web_o_redes">Sitio Web / Redes</label>
+                        <input type="text" id="edit-sitio_web_o_redes">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-producto_principal">Producto Principal</label>
+                        <input type="text" id="edit-producto_principal">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-rango_presupuesto">Presupuesto (texto)</label>
+                        <input type="text" id="edit-rango_presupuesto">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-comentarios">Detalles Adicionales</label>
+                    <textarea id="edit-comentarios" rows="4"></textarea>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="submit" class="btn-primary">Guardar Cambios</button>
+                    <button type="button" id="cancel-edit" class="btn-secondary">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Script del panel -->
+    <script src="../js/admin.js"></script>
+</body>
+</html>

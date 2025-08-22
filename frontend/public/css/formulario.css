@@ -1,0 +1,60 @@
+/* Estilos personalizados */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.form-label {
+    font-weight: 600;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.bg-darkblue {
+    background: linear-gradient(135deg, #1e275d, #2c3e50);
+}
+
+.motivational-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.motivational-image:hover {
+    transform: translateY(-5px);
+}
+
+.btn-primary {
+    background-color: #5c6bc0 !important;
+    border-color: #5c6bc0 !important;
+}
+
+.btn-primary:hover {
+    background-color: #4a58b0 !important;
+    border-color: #4a58b0 !important;
+}
+
+
+/* Archivo: styles.css */
+
+.altura-limitada {
+  height: 20vh; /* reduce altura vertical del div padre */
+  max-height: 600px; /* opcional: evita que se desborde en pantallas altas */
+}
+
+.imagen-responsiva {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}

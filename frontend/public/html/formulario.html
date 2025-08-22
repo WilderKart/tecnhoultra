@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Proyecto</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Estilo personalizado -->
+    <link rel="stylesheet" href="../css/formulario.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row g-4">
+            <!-- Sección Izquierda: Formulario -->
+            <div class="col-md-7">
+                <h2 class="text-dark mb-4">Cuéntanos sobre tu proyecto</h2>
+                <p class="mb-4">Completa el formulario y nos pondremos en contacto contigo para brindarte una propuesta
+                    detallada.</p>
+
+                <form id="miFormulario" action="#" method="post" class="needs-validation" novalidate>
+                    <!-- Grid de dos columnas -->
+                    <div class="row g-3">
+                        <!-- Columna 1 -->
+                        <div class="col-md-6">
+                            <label for="nombre" class="form-label">Nombre completo</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                                <input type="text" id="nombre" name="nombre" class="form-control"
+                                    placeholder="Ej: María Rodríguez" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="empresa" class="form-label">Empresa</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-building"></i></span>
+                                <input type="text" id="empresa" name="empresa" class="form-control"
+                                    placeholder="Ej: Innovatech S.A.S" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="correo" class="form-label">Correo electrónico</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+                                <input type="email" id="correo" name="correo" class="form-control"
+                                    placeholder="tu@empresa.com" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="telefono" class="form-label">Phone number</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-phone-fill"></i></span>
+                                <input type="tel" id="telefono" name="telefono" class="form-control"
+                                    placeholder="Ej: 300 123 4567" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="tipo-negocio" class="form-label">Tipo de negocio</label>
+                            <select id="tipo-negocio" name="tipo-negocio" class="form-select" required>
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="moda">Moda y Accesorios</option>
+                                <option value="tecnologia">Tecnología</option>
+                                <option value="alimentos">Alimentos y Bebidas</option>
+                                <option value="salud">Salud y Bienestar</option>
+                                <option value="educacion">Educación</option>
+                                <option value="otros">Otros</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="sitio" class="form-label">Sitio web o redes sociales</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-globe"></i></span>
+                                <input type="url" id="sitio" name="sitio" class="form-control"
+                                    placeholder="Ej: @innovatech o tuweb.com">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="producto" class="form-label">Producto principal</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-box-seam"></i></span>
+                                <input type="text" id="producto" name="producto" class="form-control"
+                                    placeholder="Ej: Apps móviles personalizadas" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="publico" class="form-label">Público objetivo</label>
+                            <textarea id="publico" name="publico" class="form-control" rows="3"
+                                placeholder="Ej: Emprendedores de 25 a 40 años en Colombia" required></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="diferencia" class="form-label">¿Qué te diferencia de la competencia?</label>
+                            <textarea id="diferencia" name="diferencia" class="form-control" rows="3"
+                                placeholder="Ej: Diseño UX centrado en el usuario" required></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="detalles" class="form-label">Detalles adicionales</label>
+                            <textarea id="detalles" name="detalles" class="form-control" rows="3"
+                                placeholder="Objetivos, ideas, estilo deseado, etc."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Presupuesto -->
+                    <div class="mt-4">
+                        <label for="presupuesto" class="form-label">Presupuesto estimado (COP)</label>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="text" id="presupuesto" name="presupuesto" class="form-control"
+                                placeholder="Ej: 2.500.000" required />
+                        </div>
+                    </div>
+
+                    <!-- Fecha del proyecto -->
+                    <div class="mt-4">
+                        <label for="fecha" class="form-label">Fecha estimada del proyecto</label>
+                        <input type="date" id="fecha" name="fecha" class="form-control" required>
+                    </div>
+
+                    <!-- Checkboxes -->
+                    <div class="mt-4">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="tratamiento" name="tratamiento"
+                                required>
+                            <label class="form-check-label" for="tratamiento">
+                                Autorizo expresamente el tratamiento de mis datos personales de conformidad con la Ley
+                                1581 de 2012 y demás normatividad aplicable.. He leído y acepto la <a
+                                    href="/politica-de-privacidad" target="_blank">política de tratamiento de datos
+                                    personales</a>.
+                            </label>
+                        </div>
+                        <div class="form-check mt-2">
+                            <input type="checkbox" class="form-check-input" id="comunicaciones" name="comunicaciones">
+                            <label class="form-check-label" for="comunicaciones">
+                                Acepto recibir información comercial, ofertas y novedades por correo, WhatsApp o
+                                llamada.
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Botón -->
+                    <button type="submit" class="btn btn-primary w-100 mt-4">Enviar Solicitud</button>
+                </form>
+
+                <p class="text-center text-sm text-secondary mt-4">
+                    ¿Tienes dudas? <a href="#" class="text-primary font-medium">Contáctanos aquí</a>
+                </p>
+            </div>
+
+            <!-- Sección Derecha: Imagen y mensaje motivacional -->
+            <div
+                class="col-md-5 bg-darkblue text-white p-5 rounded d-flex flex-column align-items-center justify-content-center">
+                <img src="../../src/img/Post para Instagram frase simple negro .jpg" alt="Proyecto en acción"
+                    class="motivational-image mb-4">
+                <h1 class="text-3xl font-bold">Transforma tu idea en realidad</h1>
+                <p class="opacity-90 leading-relaxed">Creamos soluciones digitales que generan impacto, crecimiento y
+                    valor para tu negocio.</p>
+            </div>
+
+
+            <!-- Bootstrap JS Bundle -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+            <!-- Archivo JS personalizado -->
+            <script src="../js/formulario.js"></script>
+</body>
+
+</html>
