@@ -16,9 +16,9 @@ app.use(cors(corsOptions));
 
 app.use(express.json());
 
-// 2. Servir archivos estáticos desde la carpeta 'frontend'
-// Esto permite que el navegador cargue tus archivos HTML, CSS y JS
-app.use(express.static(path.join(__dirname, '..', 'frontend')));
+// 2. Servir archivos estáticos desde la carpeta raíz del proyecto
+// Esto permite que el navegador cargue tu archivo index.html, CSS y JS desde la raíz.
+app.use(express.static(path.join(__dirname, '..')));
 
 app.use('/api/formulario', rutasFormulario);
 // Rutas de autenticación

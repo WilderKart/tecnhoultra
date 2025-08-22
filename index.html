@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TecnoUltra</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-900 text-white">
 
   <!-- Navbar Transparente -->
@@ -18,7 +20,7 @@
         <a href="#nosotros" class="text-white hover:text-blue-400 font-semibold">Nosotros</a>
       </nav>
       <div class="flex items-center space-x-6">
-        <a href="#" class="flex items-center space-x-1 text-white hover:text-blue-400">
+        <a href="/login" class="flex items-center space-x-1 text-white hover:text-blue-400">
           <span>⇲</span>
           <span>Login</span>
         </a>
@@ -32,14 +34,14 @@
 
   <!-- Hero -->
   <section class="relative w-full h-screen overflow-hidden">
-    < autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
-    <video>
-      <source src="tu-video.mp4" type="video/mp4" /> 
+    <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
+      <source src="tu-video.mp4" type="video/mp4" />
     </video>
     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center px-4">
       <h1 class="animated-gradient text-6xl md:text-8xl font-bold mb-4">Maximiza tu Negocio</h1>
       <p class="text-xl md:text-2xl mb-6">Soluciones digitales que generan resultados</p>
-      <a href="#servicios" class="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-4 rounded-full font-semibold text-lg">Comenzar</a>
+      <a href="#servicios"
+        class="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-4 rounded-full font-semibold text-lg">Comenzar</a>
     </div>
   </section>
 
@@ -49,29 +51,37 @@
       <h2 class="text-5xl font-bold text-center mb-16">Nuestros Servicios</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="relative h-96 rounded-xl overflow-hidden group shadow-lg">
-          <img src="https://picsum.photos/600/800" alt="Servicio 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent flex flex-col justify-end p-6">
+          <img src="https://picsum.photos/600/800" alt="Servicio 1"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent flex flex-col justify-end p-6">
             <h3 class="text-2xl font-bold text-white">Diseño Web</h3>
             <p class="text-base text-gray-200">Páginas modernas y optimizadas para tu negocio.</p>
           </div>
         </div>
         <div class="relative h-96 rounded-xl overflow-hidden group shadow-lg">
-          <img src="https://picsum.photos/601/800" alt="Servicio 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent flex flex-col justify-end p-6">
+          <img src="https://picsum.photos/601/800" alt="Servicio 2"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent flex flex-col justify-end p-6">
             <h3 class="text-2xl font-bold text-white">Email Marketing</h3>
             <p class="text-base text-gray-200">Campañas efectivas que convierten.</p>
           </div>
         </div>
         <div class="relative h-96 rounded-xl overflow-hidden group shadow-lg">
-          <img src="https://picsum.photos/602/800" alt="Servicio 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent flex flex-col justify-end p-6">
+          <img src="https://picsum.photos/602/800" alt="Servicio 3"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent flex flex-col justify-end p-6">
             <h3 class="text-2xl font-bold text-white">Marketing de Contenido</h3>
             <p class="text-base text-gray-200">Historias que conectan con tu audiencia.</p>
           </div>
         </div>
         <div class="relative h-96 rounded-xl overflow-hidden group shadow-lg">
-          <img src="https://picsum.photos/603/800" alt="Servicio 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent flex flex-col justify-end p-6">
+          <img src="https://picsum.photos/603/800" alt="Servicio 4"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent flex flex-col justify-end p-6">
             <h3 class="text-2xl font-bold text-white">SEO Orgánico</h3>
             <p class="text-base text-gray-200">Posiciona tu negocio en los primeros lugares.</p>
           </div>
@@ -86,21 +96,24 @@
       <h2 class="text-5xl font-bold text-center mb-16">Proyectos</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="overflow-hidden rounded-xl shadow-lg group">
-          <img src="https://picsum.photos/700/500" alt="Proyecto 1" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+          <img src="https://picsum.photos/700/500" alt="Proyecto 1"
+            class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="p-6">
             <h3 class="font-bold text-2xl">Cliente XYZ</h3>
             <p class="text-base text-gray-600">Desarrollo web a medida con optimización SEO.</p>
           </div>
         </div>
         <div class="overflow-hidden rounded-xl shadow-lg group">
-          <img src="https://picsum.photos/701/500" alt="Proyecto 2" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+          <img src="https://picsum.photos/701/500" alt="Proyecto 2"
+            class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="p-6">
             <h3 class="font-bold text-2xl">Marca ABC</h3>
             <p class="text-base text-gray-600">Estrategia de marketing digital integral.</p>
           </div>
         </div>
         <div class="overflow-hidden rounded-xl shadow-lg group">
-          <img src="https://picsum.photos/702/500" alt="Proyecto 3" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+          <img src="https://picsum.photos/702/500" alt="Proyecto 3"
+            class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="p-6">
             <h3 class="font-bold text-2xl">Empresa 123</h3>
             <p class="text-base text-gray-600">Campaña de email marketing para nuevos clientes.</p>
@@ -117,19 +130,22 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center">
           <img src="https://picsum.photos/100" alt="Cliente 1" class="w-20 h-20 rounded-full mb-4">
-          <p class="italic text-gray-600 mb-4">"El equipo de TecnoUltra transformó completamente nuestra presencia online. ¡Increíble trabajo!"</p>
+          <p class="italic text-gray-600 mb-4">"El equipo de TecnoUltra transformó completamente nuestra presencia
+            online. ¡Increíble trabajo!"</p>
           <h4 class="font-bold text-lg">Ana Gómez</h4>
           <span class="text-sm text-gray-500">CEO - Empresa Creativa</span>
         </div>
         <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center">
           <img src="https://picsum.photos/101" alt="Cliente 2" class="w-20 h-20 rounded-full mb-4">
-          <p class="italic text-gray-600 mb-4">"Gracias a su estrategia de marketing, nuestras ventas aumentaron un 200%."</p>
+          <p class="italic text-gray-600 mb-4">"Gracias a su estrategia de marketing, nuestras ventas aumentaron un
+            200%."</p>
           <h4 class="font-bold text-lg">Luis Fernández</h4>
           <span class="text-sm text-gray-500">Director - StartUp Pro</span>
         </div>
         <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center">
           <img src="https://picsum.photos/102" alt="Cliente 3" class="w-20 h-20 rounded-full mb-4">
-          <p class="italic text-gray-600 mb-4">"El SEO que implementaron nos posicionó en los primeros lugares en Google."</p>
+          <p class="italic text-gray-600 mb-4">"El SEO que implementaron nos posicionó en los primeros lugares en
+            Google."</p>
           <h4 class="font-bold text-lg">María López</h4>
           <span class="text-sm text-gray-500">CMO - VentasGlobal</span>
         </div>
@@ -138,7 +154,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-gray-200 py-16">
+  <footer id="nosotros" class="bg-gray-800 text-gray-200 py-16">
     <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
       <div>
         <h4 class="text-2xl font-bold mb-4">TecnoUltra</h4>
@@ -152,7 +168,7 @@
           <li><a href="#nosotros" class="hover:text-white">Nosotros</a></li>
         </ul>
       </div>
-      <div>
+      <div id="contacto">
         <h4 class="text-xl font-semibold mb-4">Contacto</h4>
         <p>Email: contacto@tecnoultra.com</p>
         <p>Tel: (866) 344-8852</p>
@@ -171,4 +187,4 @@
     </div>
   </footer>
 
-</bod
+  </bod
