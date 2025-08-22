@@ -1,5 +1,10 @@
 // formulario.js
 
+// --- CONFIGURACIÓN DE API ---
+// Usamos una ruta relativa en lugar de absoluta.
+// Así funcionará tanto en desarrollo como en producción si el backend está en el mismo dominio.
+const API_BASE_URL = '/api/formulario';
+
 /**
  * Formatea el valor de un input a moneda colombiana (COP).
  * Elimina cualquier caracter que no sea un dígito.
@@ -69,8 +74,6 @@ async function handleFormSubmit(e) {
         publico_objetivo: document.getElementById('publico')?.value.trim(),
         diferencial: document.getElementById('diferencia')?.value.trim(),
         comentarios: document.getElementById('detalles')?.value.trim(),
-        // **LA CORRECCIÓN CLAVE ESTÁ AQUÍ**
-        // Enviamos el valor de texto formateado, que es lo que el backend espera.
         rango_presupuesto: document.getElementById('presupuesto')?.value.trim(),
         fecha_limite: document.getElementById('fecha')?.value,
     };
@@ -82,7 +85,7 @@ async function handleFormSubmit(e) {
     }
 
     try {
-        const response = await fetch('http://localhost:3001/api/formulario', {
+        const response = await fetch(API_BASE_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(datos),
@@ -101,7 +104,6 @@ async function handleFormSubmit(e) {
         alert('No se pudo conectar con el servidor. Intenta más tarde.');
     }
 }
-
 
 // --- EVENT LISTENERS ---
 // Se ejecuta cuando el DOM está completamente cargado.

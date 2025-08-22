@@ -18,8 +18,9 @@ app.use(express.json());
 
 // 2. Servir archivos estáticos desde la carpeta raíz del proyecto
 // Esto permite que el navegador cargue tu archivo index.html, CSS y JS desde la raíz.
-app.use(express.static(path.join(__dirname, '..')));
+app.use(express.static(path.join(__dirname, '../frontend/public')));
 
+// Rutas relativas para las APIs
 app.use('/api/formulario', rutasFormulario);
 // Rutas de autenticación
 require('./routes/auth.routes')(app);
